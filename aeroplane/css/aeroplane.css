@@ -29,7 +29,7 @@
     outline: none;
 }
 .button_div ul.first li.two input{
- background-image: url("/arrow.jpg");
+    background-image: url("../img/arrow.jpg");
     background-repeat: no-repeat;
     background-color: transparent;
     width: 54px;
@@ -58,7 +58,7 @@
     margin-right: 5px;
 }
 .button_div ul.second li.one input {
- background-image: url("/arrow.jpg");
+    background-image: url("../img/arrow.jpg");
     background-repeat: no-repeat;
     background-color: transparent;
     width: 52px;
@@ -73,7 +73,7 @@
     margin-right: 5px;
 }
 .button_div ul.second li.two input {
-background-image: url("/arrow.jpg");
+    background-image: url("../img/arrow.jpg");
     background-repeat: no-repeat;
     background-color: transparent;
     width: 54px;
@@ -87,7 +87,7 @@ background-image: url("/arrow.jpg");
     outline: none;
 }
 .button_div ul.second li.three input {
-  background-image: url("/arrow.jpg");
+    background-image: url("../img/arrow.jpg");
     background-repeat: no-repeat;
     background-color: transparent;
     width: 54px;
