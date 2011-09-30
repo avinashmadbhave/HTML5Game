@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Game</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	 	var boxWidth = 20
+	 	var boxHeight = 20
+	 	//var windowHeight = $(window).height();
+	 	//var windowWidth = $(window).width();
+	 	var windowHeight = 300;
+	 	var windowWidth = 300;
+		var speed = 1;
+		var boxMaxLeft = windowWidth - boxWidth
+		var boxMaxbottom = windowHeight - boxHeight
+		var targetTop = parseInt($(".target").css('top'));
+		var targetLeft = parseInt($(".target").css('left'));
+		var targetBot = parseInt($(".target").css('top')) + 20;
+		var targetRight = parseInt($(".target").css('left')) + 20;
+		var arrowTop = parseInt($(".arrow").css('top'));
+		var arrowLeft = parseInt($(".arrow").css('left'));
+		var arrowBot = parseInt($(".arrow").css('top')) + 20;
+		var arrowRight = parseInt($(".arrow").css('left')) + 20;
+		targeta();
+		$(".stop").click(function(){
+			$('.arrow').css({left:0});
+		});
+		$(".go, .box").click(function(){
+			$('.target').removeClass('after');
+			$('.arrow').css({left:0});
+			runa();
+		});
+		$('.barbox').hover(function(){
+			speed =$(this).attr('title');
+			$(this).addClass('selected');
+			$(this).nextAll('.barbox').addClass('selected');
+			$(this).prevAll('.barbox').removeClass('selected');
+			//alert(speed);
+		});
+		function runa(){
+		targetTop = parseInt($(".target").css('top'));
+		targetLeft = parseInt($(".target").css('left'));
+		targetBot = parseInt($(".target").css('top')) + 40;
+		targetRight = parseInt($(".target").css('left')) + 40;
+		arrowTop = parseInt($(".arrow").css('top'));
+		arrowLeft = parseInt($(".arrow").css('left'));
+		arrowBot = parseInt($(".arrow").css('top')) + 20;
+		arrowRight = parseInt($(".arrow").css('left')) + 20;
+			if(((arrowTop>=targetTop && arrowLeft>=targetLeft) && (arrowTop<=targetBot && arrowLeft<=targetRight)) || ((arrowBot>=targetTop && arrowRight>=targetLeft) && (arrowTop<=targetBot && arrowRight<=targetRight)) || ((arrowBot>=targetTop && arrowLeft>=targetLeft) && (arrowBot<=targetBot && arrowLeft<=targetRight))) {
+				var currentScore = parseInt($(".score").html());
+				$(".score").html(currentScore + 1);
+				//$('.arrow').css({left:0});
+				$('.target').addClass('after');
+				$('.arrow').animate({left:"+="+speed }, 1, runb);
+			}else{
+				if(arrowLeft <= 300)
+				{
+				$('.arrow').animate({left:"+="+speed }, 1, runb);
+				}else{
+					//$('.arrow').css({left:0});
+				}
+			}
+		};
+		function runb(){
+		$('.arrow').animate({left:"+="+speed }, 1, runa);
+		};
+		function targeta(){
+		$('.target').animate({top:280}, 4000, targetb);
+		};
+		function targetb(){
+		$('.target').animate({top:0}, 4000, targeta);
+		};
+});
+
+</script>
+<style>
+* {
+	margin:0;
+	padding:0;
+}
+.box {
+	height:300px;
+	width:300px;
+	border:2px solid #333;
+	margin:10px 0 0;
+	position:relative;
+}
+.boxWrapper {
+	height:400px;
+	width:400px;
+	margin:100px auto;
+	position:relative;
+}
+body {
+	height:100%;
+	width:100%;
+}
+.arrow, .target, .fadeOut {
+	height:20px;
+	width:20px;
+	position:absolute;
+	top:20px;
+	left:20px;
+}
+.target, .fadeOut {
+	top:160px;
+	left:260px;
+	height:40px;
+	width:40px;
+	background:url(angrybirds.png) no-repeat;
+}
+.arrow {
+	top:150px;
+	left:0;
+}
+.speedBar {
+	width:10px;
+	border:1px solid #000;
+	position:absolute;
+	right:-22px;
+	top:0;
+}
+.barbox {
+	height:10px;
+	width:10px;
+	border-bottom:1px solid #000;
+}
+.swap, .swap2 {
+background:#3B5998;
+height:20px;
+width:20px;
+position:absolute;
+}
+.selected{
+	background:#FF0000;
+}
+.go {
+	height:35px;
+	padding:5px 10px;
+}
+.after{
+background:url(Angry-after1.jpg) no-repeat;
+}
+</style>
+</head>
+
+<body>
+
+
+
+<div class="boxWrapper">
+<input type="button" class="go" value="go" />
+<!--<input type="button" class="stop" value="Stop" />-->
+Score: <span class="score">0</span>
+    <div class="box">
+        <div class="speedBar">
+            <div class="barbox" title="10"></div>
+            <div class="barbox" title="9"></div>
+            <div class="barbox" title="8"></div>
+            <div class="barbox" title="7"></div>
+            <div class="barbox" title="6"></div>
+            <div class="barbox" title="5"></div>
+            <div class="barbox" title="4"></div>
+            <div class="barbox" title="3"></div>
+            <div class="barbox" title="2"></div>
+            <div class="barbox" title="1"></div>
+        </div>
+        <div class="arrow">
+        	<img src="arrowimage.png" height="20" width="20" />
+        </div>
+        <div class="target">
+        </div>
+    </div>
+</div>
+</body>
+</html>

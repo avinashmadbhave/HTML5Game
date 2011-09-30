@@ -1,0 +1,97 @@
+ 
+.canvas_div {
+    float: left;
+    margin-right: 15px;
+}
+.button_div {
+    float: left;
+    height: auto;
+    width: 200px;
+}
+.button_div ul.first {
+    width: 100%;
+    float: left;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+.button_div ul.first li.one{
+    float: left;
+    display: inline;
+    outline: none;
+    min-height: 47px;
+    min-width: 51px;
+    margin-right: 5px;
+}
+.button_div ul.first li.two {
+    float: left;
+    display: inline;
+    outline: none;
+}
+.button_div ul.first li.two input{
+ background-image: url("/arrow.jpg");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 54px;
+    height: 47px;
+    background-position: -49px 1px;
+    border-radius: 18px;
+}
+.button_div ul.first li.three {
+    float: left;
+    display: inline;
+    outline: none;
+    min-height: 47px;
+    min-width: 51px;
+}
+.button_div ul.second {
+    width: 100%;
+    float: left;
+    height: auto;
+    margin-top: 5px;
+    padding: 0;
+}
+.button_div ul.second li.one {
+    float: left;
+    display: inline;
+    outline: none;
+    margin-right: 5px;
+}
+.button_div ul.second li.one input {
+ background-image: url("/arrow.jpg");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 52px;
+    height: 47px;
+    background-position: 0px -44px;
+    border-radius: 18px;
+}
+.button_div ul.second li.two {
+    float: left;
+    display: inline;
+    outline: none;
+    margin-right: 5px;
+}
+.button_div ul.second li.two input {
+background-image: url("/arrow.jpg");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 54px;
+    height: 47px;
+    background-position: -49px -46px;
+    border-radius: 18px;
+}
+.button_div ul.second li.three{
+    float: left;
+    display: inline;
+    outline: none;
+}
+.button_div ul.second li.three input {
+  background-image: url("/arrow.jpg");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 54px;
+    height: 47px;
+    background-position: -102px -43px;
+    border-radius: 18px;
+}
