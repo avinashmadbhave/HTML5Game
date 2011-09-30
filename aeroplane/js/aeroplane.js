@@ -27,7 +27,7 @@ jQuery(function(){
                 break;
         }
     });
-    $(this).keypress(function(event_key){
+    $(this).keydown(function(event_key){
         switch(event_key.keyCode){
             case 37:
                 move_left();
